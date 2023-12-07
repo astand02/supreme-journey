@@ -9,10 +9,10 @@ router.get('/', withAuth, async (req, res) => {
         order: [['name', 'ASC']],
       });
   
-      const users = userData.map((project) => project.get({ plain: true }));
+      const user = userData.map((post) => post.get({ plain: true }));
   
       res.render('homepage', {
-        users,
+        user,
         logged_in: req.session.logged_in,
       });
     } catch (err) {
@@ -20,9 +20,27 @@ router.get('/', withAuth, async (req, res) => {
     }
   });
   
+  router.get('/userPage', withAuth, async (req, res) => {
+    try {
+      const userData = await User.findByPk(req.session.userId, {
+        attributes: { exclude: ['password'] },
+        include: [{ model: Post }],
+      });
+  
+      const user = userData.get({ plain: true });
+  
+      res.render('userPage', {
+        ...user,
+        logged_in: true
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
   router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-      res.redirect('/');
+      res.redirect('/userPage');
       return;
     }
   
