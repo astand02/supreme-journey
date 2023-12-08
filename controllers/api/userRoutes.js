@@ -3,16 +3,17 @@ const { User } = require('../../models');
 
 // SignUp
 router.post('/signup', async (req, res) => {
+  console.log(req.body)
     try {
       const userData = await User.create({
-        username: req.body.username,
+        name: req.body.name,
         email: req.body.email,
         password: req.body.password,
       });
   
       req.session.save(() => {
-        req.session.loggedIn = true;
-  
+        req.session.logged_in = true;
+        req.session.userId = userData.id
         res.status(200).json(userData);
       });
     } catch (err) {
@@ -47,8 +48,8 @@ router.post('/signup', async (req, res) => {
       }
   
       req.session.save(() => {
-        req.session.loggedIn = true;
-  
+        req.session.logged_in = true;
+  req.session.userId = userData.id
         res
           .status(200)
           .json({ user: userData, message: 'You are now logged in!' });
@@ -60,7 +61,7 @@ router.post('/signup', async (req, res) => {
   });
 
   //LogOut
-  router.post('/logOut', (req, res) => {
+  router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
       req.session.destroy(() => {
         res.status(204).end();
