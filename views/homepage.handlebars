@@ -4,12 +4,13 @@
     <h2>
       <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
-    <p>Created by {{post.user.name}} on {{formatDate post.dateCreated}}</p>
   </div>
   <div class="col-md-7">
     <p>
       {{post.content}}
     </p>
+    <h3>Created by {{post.user.name}} on {{formatDate post.dateCreated}}</h3>
   </div>
 </div>
+</main>
 {{/each}}

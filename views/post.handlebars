@@ -1,5 +1,7 @@
-<div class="text-center">
+ <main class="container container-fluid mt-5">
+  <div class="col-md-7">
   <h2>{{title}}</h2>
   <p>{{content}}</p>
-  <p>Created by {{name}} on {{formatDate dateCreated}}</p>
-</div>
+  <h3>Created by {{post.user}} on {{formatDate post.dateCreated}}</h3>
+  </div>
+  

@@ -1,0 +1,90 @@
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background-color: #5F8575; 
+  color: #ECFFDC;
+  border: #ECFFDC;
+}
+
+header {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  text-align: center;
+  margin-top: -60px;
+  margin-left: -20px;
+  margin-right: -20px;
+  background-color: #F9F6EE; 
+}
+
+a:link, a:visited {
+  color: #C1E1C1;
+  padding: 5px 10px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  background-color: #F9F6EE;
+  border: 1px solid #F9F6EE;
+  border-radius: 15px;
+}
+nav{
+  margin-top: -70px;
+  margin-bottom: 50px;
+  font-size: 20px;
+  text-align: right;
+}
+
+main {
+  background-color:#5F8575;
+  border-style: double;
+  border-color: #F9F6EE;
+  font-size: 20px;
+}
+
+h2{
+  text-align: left;
+  margin-left: 5px;
+  margin-top: 1px;
+  padding: 2px;
+  border-bottom: double;
+}
+p{
+  margin: 30px;
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+h3{
+  text-align: right;
+  margin-right: 20px;
+  font-size: 10px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 1px;
+  padding: 2px;
+  border-bottom: double;
+}
+
+form{ 
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 60px;
+  margin-top: -70px;
+  padding: 50px;
+}
+
+button {
+  text-align: center;
+
+}
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
